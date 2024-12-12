@@ -9,6 +9,9 @@ public class Employee {
 
     }
 
+    public Employee(Integer id, String name, Double salary) {
+    }
+
     public Integer getId() {
         return id;
     }
