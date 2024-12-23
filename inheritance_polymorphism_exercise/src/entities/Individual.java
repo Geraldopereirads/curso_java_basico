@@ -4,6 +4,11 @@ public class Individual extends TaxPayer {
     private Double heathExpenditures;
 
 
+    public Individual() {
+
+    }
+
+
     public Individual(String name, Double anualIncome, Double heathExpenditures) {
         super(name, anualIncome);
         this.heathExpenditures = heathExpenditures;
