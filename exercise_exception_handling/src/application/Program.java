@@ -28,10 +28,13 @@ public class Program {
         System.out.print("Informe uma quantia para sacar: ");
         Double amount = sc.nextDouble();
 
+        try {
+            account.withdraw(amount);
+            System.out.printf("Novo saldo: %.2f%n", account.getBalance());
 
-        account.withdraw(amount);
-        System.out.printf("Novo saldo: %.2f%n", account.getBalance());
-
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
 
         sc.close();
 

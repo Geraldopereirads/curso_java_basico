@@ -1,5 +1,7 @@
 package entities;
 
+import exceptions.BusinessException;
+
 import java.util.Date;
 
 public class Account {
@@ -54,12 +56,27 @@ public class Account {
     }
 
     public void deposit(Double amount) {
+
         this.balance += amount;
     }
 
     public void withdraw(Double amount) {
+        validateWithdrawLimit(amount);
         this.balance -= amount;
     }
+
+
+    private void validateWithdrawLimit(Double amount) {
+        if (amount > getWithdrawLimit()) {
+            throw new BusinessException("Erro de saque: A quantia excede o limite de saque");
+        }
+
+        if (amount > getBalance()) {
+            throw new BusinessException("Erro de saque: Saldo insuficiente");
+        }
+    }
+
+
 }
 
 
