@@ -6,19 +6,20 @@ public class Account {
     private Integer number;
     private String holder;
     private Double balance;
-    private Date withdrawLimit;
+    private Double withdrawLimit;
 
 
     public Account() {
 
     }
 
-    public Account(Double balance, String holder, Integer number, Date withdrawLimit) {
+    public Account(Double balance, String holder, Integer number, Double withdrawLimit) {
         this.balance = balance;
         this.holder = holder;
         this.number = number;
         this.withdrawLimit = withdrawLimit;
     }
+
 
     public Double getBalance() {
         return balance;
@@ -44,11 +45,11 @@ public class Account {
         this.number = number;
     }
 
-    public Date getWithdrawLimit() {
+    public Double getWithdrawLimit() {
         return withdrawLimit;
     }
 
-    public void setWithdrawLimit(Date withdrawLimit) {
+    public void setWithdrawLimit(Double withdrawLimit) {
         this.withdrawLimit = withdrawLimit;
     }
 
@@ -59,5 +60,7 @@ public class Account {
     public void withdraw(Double amount) {
         this.balance -= amount;
     }
-
 }
+
+
+
